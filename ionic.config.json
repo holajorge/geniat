@@ -1,0 +1,7 @@
+{
+  "name": "geniat",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
