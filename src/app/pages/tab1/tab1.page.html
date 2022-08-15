@@ -1,0 +1,30 @@
+<ion-header no-border>
+  <ion-toolbar>
+    
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" color="danger">
+        <ion-icon slot="icon-only" name="exit"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>
+      Geniat
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  
+  <!-- refresher -->
+  <ion-refresher slot="fixed" (ionRefresh)="recargar($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <!-- lista cars  -->
+  <app-cars *ngIf="listCars.length > 0" [cars]="listCars" [marcas]="listMarcas"></app-cars>
+
+  <!-- infinite scroll -->
+  <ion-infinite-scroll threshold="150px" (ionInfinite)="siguientes($event)" [disabled]="!habilitado">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+ 
+</ion-content>
